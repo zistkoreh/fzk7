@@ -463,10 +463,12 @@ textarea {
 
 .status-title {
   color: #2c3e50;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(44, 62, 80, 0.1);
   font-size: 1.4rem;
+  margin-right: 10px;
+
+  /* margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(44, 62, 80, 0.1); */
 }
 
 .stats-container {
@@ -502,9 +504,9 @@ textarea {
 
 .stat-icon {
   font-size: 2rem;
-  padding: 1rem;
+  /* padding: 1rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.15); */
 }
 
 .stat-content {
@@ -563,4 +565,9 @@ textarea {
 
 #tempHeaderTask {
   margin-bottom: 10px;
+}
+
+.nav-icon {
+  width: 1.2em; /* Match text size */
+  height: 1.2em;
 }
