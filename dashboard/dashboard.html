@@ -14,6 +14,11 @@
 
     <link rel="stylesheet" href="../datapicker/jalalidatepicker.min.css" />
     <script src="../datapicker/jalalidatepicker.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <div class="dashboard-container" id="dashboardSection">
@@ -24,9 +29,39 @@
         </div>
         <nav>
           <ul class="nav-menu">
-            <li class="nav-item" id="dashboardBtn"> آمار</li>
-            <li class="nav-item" id="viewTasksBtn"> کار های ثبت شده</li>
-            <li class="nav-item" id="addTaskBtn"> اضافه کردن کار جدید</li>
+            <!-- <li class="nav-item" id="dashboardBtn">📊 آمار</li> -->
+            <li class="nav-item" id="dashboardBtn">
+              <img
+                src="../icons/bar-chart-rise.svg"
+                alt=""
+                aria-hidden="true"
+                class="nav-icon"
+              />
+
+              <span class="visually-hidden">آمار</span>
+            </li>
+
+            <li class="nav-item" id="viewTasksBtn">
+              <img
+                src="../icons/notepad.svg"
+                alt=""
+                aria-hidden="true"
+                class="nav-icon"
+              />
+
+              <span class="visually-hidden">کار های ثبت شده</span>
+            </li>
+
+            <li class="nav-item" id="addTaskBtn">
+              <img
+                src="../icons/circle-plus.svg"
+                alt=""
+                aria-hidden="true"
+                class="nav-icon"
+              />
+
+              <span class="visually-hidden">اضافه کردن کار جدید </span>
+            </li>
           </ul>
         </nav>
         <button class="logout-btn" id="logoutBtn" style="visibility: hidden">
@@ -36,17 +71,52 @@
 
       <main class="main-content">
         <div class="tasks-status-box" id="welcomeBox">
-          <h1 class="status-title"> آمار عملکرد</h1>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              padding-bottom: 1rem;
+              border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+              margin-bottom: 2rem;
+            "
+          >
+            <img
+              src="../icons/bar-chart-rise.svg"
+              alt=""
+              aria-hidden="true"
+              class="nav-icon"
+            />
+            <h1 class="status-title">آمار عملکرد</h1>
+          </div>
+
           <div class="stats-container">
             <div class="stat-card success">
-              <div class="stat-icon"></div>
+              <div class="stat-icon">
+                <img
+                  src="../icons/circle-checkmark.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="nav-icon"
+                  style="height: 50px; width: 50px"
+                />
+              </div>
+
               <div class="stat-content">
                 <span class="stat-number" id="completedTasks">10</span>
                 <span class="stat-label">کارهای انجام شده</span>
               </div>
             </div>
             <div class="stat-card danger">
-              <div class="stat-icon"></div>
+              <div class="stat-icon">
+                <img
+                  src="../icons/sandclock.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="nav-icon"
+                  style="height: 42px; width: 42px"
+                />
+              </div>
               <div class="stat-content">
                 <span class="stat-number" id="unCompletedTasks">10</span>
                 <span class="stat-label">کارهای باقیمانده</span>
@@ -62,7 +132,7 @@
         </div>
 
         <div class="task-form" id="taskForm">
-          <h2 id="tempHeaderTask"> افزودن کار جدید</h2>
+          <h2 id="tempHeaderTask">📝 افزودن کار جدید</h2>
           <form id="taskSubmissionForm">
             <div class="form-group">
               <label for="taskTitle">عنوان کار *</label>
@@ -94,7 +164,7 @@
               <textarea id="taskDescription"></textarea>
             </div>
 
-            <button type="submit" class="btn-primary"> اضاضه کردن کار</button>
+            <button type="submit" class="btn-primary">➕ اضاضه کردن کار</button>
             <button
               type="button"
               id="cancelEditBtn"
@@ -108,7 +178,19 @@
 
         <div class="task-list" id="taskList">
           <div class="task-header">
-            <h2> لیست کار ها</h2>
+            <div
+              style="display: flex; flex-direction: row; align-items: center"
+            >
+              <img
+                src="../icons/notepad.svg"
+                alt=""
+                aria-hidden="true"
+                class="nav-icon"
+                style="height: 24px; width: 24px"
+              />
+
+              <h2 style="margin-right: 10px">لیست کار ها</h2>
+            </div>
           </div>
           <div id="tasksContainer"></div>
           <div
