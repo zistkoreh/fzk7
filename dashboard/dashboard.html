@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پنل کاربری</title>
+    <link rel="icon" type="image/jpeg" href="fzk.jpg" />
+    <link
+      href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="stylesheet" href="../datapicker/jalalidatepicker.min.css" />
+    <script src="../datapicker/jalalidatepicker.min.js"></script>
+  </head>
+  <body>
+    <div class="dashboard-container" id="dashboardSection">
+      <aside class="sidebar">
+        <div class="logo">فن آوران زیست کره</div>
+        <div class="user-info">
+          <p>خوش آمدید، <span id="usernameDisplay"></span></p>
+        </div>
+        <nav>
+          <ul class="nav-menu">
+            <li class="nav-item" id="dashboardBtn"> آمار</li>
+            <li class="nav-item" id="viewTasksBtn"> کار های ثبت شده</li>
+            <li class="nav-item" id="addTaskBtn"> اضافه کردن کار جدید</li>
+          </ul>
+        </nav>
+        <button class="logout-btn" id="logoutBtn" style="visibility: hidden">
+          🚪 خروج از سیستم
+        </button>
+      </aside>
+
+      <main class="main-content">
+        <div class="tasks-status-box" id="welcomeBox">
+          <h1 class="status-title"> آمار عملکرد</h1>
+          <div class="stats-container">
+            <div class="stat-card success">
+              <div class="stat-icon"></div>
+              <div class="stat-content">
+                <span class="stat-number" id="completedTasks">10</span>
+                <span class="stat-label">کارهای انجام شده</span>
+              </div>
+            </div>
+            <div class="stat-card danger">
+              <div class="stat-icon"></div>
+              <div class="stat-content">
+                <span class="stat-number" id="unCompletedTasks">10</span>
+                <span class="stat-label">کارهای باقیمانده</span>
+              </div>
+            </div>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar">
+              <div class="progress-fill success" style="width: 50%"></div>
+            </div>
+            <div class="progress-text">پیشرفت کلی: 50%</div>
+          </div>
+        </div>
+
+        <div class="task-form" id="taskForm">
+          <h2 id="tempHeaderTask"> افزودن کار جدید</h2>
+          <form id="taskSubmissionForm">
+            <div class="form-group">
+              <label for="taskTitle">عنوان کار *</label>
+              <input type="text" id="taskTitle" required />
+            </div>
+            <div class="form-group">
+              <label for="taskStatus">وضعیت *</label>
+              <select id="taskStatus" required>
+                <option value="">انتخاب کنید</option>
+                <option value="انجام نشده">انجام نشده</option>
+                <option value="انجام شده">انجام شده</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="dataPickerField">تاریخ انجام *</label>
+              <div>
+                <input
+                  type="text"
+                  data-jdp
+                  name="date"
+                  placeholder="تاریخ"
+                  id="dataPickerField"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="taskDescription">توضیحات</label>
+              <textarea id="taskDescription"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary"> اضاضه کردن کار</button>
+            <button
+              type="button"
+              id="cancelEditBtn"
+              style="display: none"
+              class="btn-secondary"
+            >
+              لغو
+            </button>
+          </form>
+        </div>
+
+        <div class="task-list" id="taskList">
+          <div class="task-header">
+            <h2> لیست کار ها</h2>
+          </div>
+          <div id="tasksContainer"></div>
+          <div
+            class="export-container"
+            style="margin-top: 20px; text-align: center"
+          >
+            <button id="exportExcelBtn" class="btn-primary">خروجی اکسل</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      jalaliDatepicker.startWatch();
+    </script>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

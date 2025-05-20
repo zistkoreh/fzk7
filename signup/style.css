@@ -1,0 +1,132 @@
+ :root {
+        --sidebar-width: 250px;
+        --primary-color: #1a365d;
+        --secondary-color: #4299e1;
+        --hover-color: #2b6cb0;
+        --bg-color: #f7fafc;
+        --success-color: #38a169;
+        --danger-color: #e53e3e;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Vazir, Tahoma, sans-serif !important;
+      }
+
+      body {
+        background: var(--bg-color);
+        min-height: 100vh;
+      }
+
+      .login-container {
+        font-family: Vazir, Tahoma, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url("Green-globe-2.jpg");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+
+      .login-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+      }
+
+      .login-container:hover::before {
+        opacity: 1;
+      }
+
+      .login-box {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 450px;
+        margin: 0 15px;
+        backdrop-filter: blur(4px);
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+      }
+
+      .login-container:hover .login-box {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+      }
+
+      .form-title {
+        color: #2e7d32;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .form-group {
+        margin-bottom: 1.8rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 0.6rem;
+        color: #2d3748;
+        font-size: 0.95rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.85rem;
+        border: 1px solid #e2e8f0;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 0.95rem;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+
+      input:focus {
+        outline: none;
+        border-color: #2e7d32;
+        box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+      }
+
+      button {
+        width: 100%;
+        padding: 0.85rem;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #1b5e20;
+        transform: translateY(-1px);
+      }
+
+      
+      .error {
+        font-size: 18px;
+        color: #e53e3e;
+        margin-top: 10px;
+
+        justify-self: center;
+        font-weight: 800;
+      }
