@@ -129,7 +129,7 @@ function refreshTaskList() {
  <div class="priority-badge priority-${task.status.replace(" ", "-")}">
  وضعیت: ${task.status}
  </div>
- <div class="task-date"> ${task.date}
+ <div class="task-date">   ${task.date}
  </div>
  </div>
  <div class="task-body">
@@ -232,7 +232,7 @@ cancelEditBtn.addEventListener("click", function () {
   taskSubmissionForm.reset();
   document.querySelector(
     '#taskSubmissionForm button[type="submit"]'
-  ).textContent = " اضافه کردن";
+  ).textContent = "➕ اضافه کردن";
   this.style.display = "none";
   taskForm.style.display = "none";
   taskList.style.display = "block";
